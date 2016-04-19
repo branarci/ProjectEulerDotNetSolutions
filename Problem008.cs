@@ -61,18 +61,17 @@ class MainClass {
     		}
     		
     		if(product > maxProduct){
-    			Console.WriteLine(maxProduct +"\t\t"+ product);
+    			//Console.WriteLine(maxProduct +"\t\t"+ product);
     			maxProduct = product;
     			digitsInvolved = tempDigitsInvolved;
     		}
     	}
     	
     	foreach(int di in digitsInvolved){
-    		Console.WriteLine(di);
+    		Console.Write(di);
     	}
     	Console.WriteLine();
     	
     	return maxProduct;
     }
 }
-      
