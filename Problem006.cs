@@ -13,3 +13,35 @@ Find the difference between the sum of the squares of the first one hundred natu
 */
 
 
+using System;
+class MainClass {
+  public static void Main (string[] args) {
+    
+    int largeAnswer = squareOfSum(100);
+    int smallAnswer = sumOfSquares(100);
+    
+    Console.WriteLine(largeAnswer +"\t"+ smallAnswer);
+    Console.WriteLine("\t\t"+ (largeAnswer - smallAnswer));
+  }
+  
+  public static int sumOfSquares(int roof){
+  	int sum = 0;
+  	for(int i = 1; i < roof+1; i++){
+  		int temp = i*i;
+  		sum += temp;
+  	}
+  	return sum;
+  }
+  
+  public static int squareOfSum(int roof){
+  	int sum = 0;
+  	int temp= 0;
+  	for(int i = 1; i < roof+1; i++){
+  		temp += i;
+  	}
+  	sum = temp*temp;
+  	
+  	return sum;
+  }
+}
+      
