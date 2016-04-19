@@ -37,7 +37,7 @@ class MainClass {
     		//Console.WriteLine(j +"  "+  k);
     		if(j % 2 == 0){
     			sum = sum + j;
-    			//Console.WriteLine("        "+ sum);
+    			//Console.WriteLine("          "+ sum);
     		}
     	}
     	return sum;
