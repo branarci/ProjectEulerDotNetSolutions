@@ -11,7 +11,7 @@ class MainClass {
   public static void Main (string[] args) {
     
     int current = 2;
-    int limit = 1000;
+    int limit = 10000;
     for(int i = 0; i < limit; i++){
     	current = nextPrime(current);
     }
