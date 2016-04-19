@@ -7,3 +7,28 @@ What is the smallest positive number that is evenly divisible by all of the numb
 */
 
 
+using System;
+class MainClass {
+  public static void Main (string[] args) {
+    
+    int a = dividedWithNoRemainder(20, 500000000);
+    
+    Console.WriteLine(a);
+  }
+  
+  public static int dividedWithNoRemainder(int floor, int roof){
+  	int result = 0;
+  	for(int j = floor; j < roof; j++){
+  		for(int k = 1; k < floor+1; k++){
+  			if(j%k != 0){
+  				break;
+  			}
+  			if(k == floor){
+  				result = j;
+  				return result;
+  			}
+  		}
+  	}
+  	return result;
+  }
+}
