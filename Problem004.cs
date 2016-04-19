@@ -23,6 +23,8 @@ class MainClass {
 	int topj = 0;
 	int topk = 0;
 	
+	int maxProduct = 0;
+	
 	for(int j = sj; j < roof; j++){
 		for(int k = sk; k < roof; k++){
 			int temp = j*k;
@@ -37,9 +39,13 @@ class MainClass {
 				int product = Int32.Parse(stemp);
 				
 				Console.WriteLine(j + "    " + k + "    " + product);
-				topProduct = product;
-				topj = j;
-				topk = k;
+				
+				if(product > maxProduct){
+					topProduct = product;
+					topj = j;
+					topk = k;
+					maxProduct = product;
+				}
 			}
 		}
 	}
