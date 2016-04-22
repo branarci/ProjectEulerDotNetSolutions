@@ -91,7 +91,7 @@ class MainClass {
     		int c = source[y, x+2];
     		int d = source[y, x+3];
     		
-    		int sum = a + b + c + d;
+    		int sum = a * b * c * d;
     		
     		if(maxSum < sum){
     			maxSum = sum;
@@ -117,7 +117,7 @@ class MainClass {
     		int c = source[y+2, x];
     		int d = source[y+3, x];
     		
-    		int sum = a + b + c + d;
+    		int sum = a * b * c * d;
     		
     		if(maxSum < sum){
     			maxSum = sum;
@@ -143,7 +143,7 @@ class MainClass {
     		int c = source[y+2, x+2];
     		int d = source[y+3, x+3];
     		
-    		int sum = a + b + c + d;
+    		int sum = a * b * c * d;
     		
     		if(maxSum < sum){
     			maxSum = sum;
@@ -169,7 +169,7 @@ class MainClass {
     		int c = source[y-2, x+2];
     		int d = source[y-3, x+3];
     		
-    		int sum = a + b + c + d;
+    		int sum = a * b * c * d;
     		
     		if(maxSum < sum){
     			maxSum = sum;
