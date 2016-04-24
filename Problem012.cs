@@ -19,3 +19,34 @@ What is the value of the first triangle number to have over five hundred divisor
 */
 
 
+using System;
+
+class MainClass {
+	static bool inProgress = true;
+	
+	public static void Main (string[] args) {
+		int i = 10000;
+
+    	while(inProgress){
+    		nextTriangleNumber(i);
+    		i++;
+    	}
+  	}
+  
+	public static void nextTriangleNumber(int n){
+	  	int sum = (int)(n*(n+1)*0.5);
+	  	
+	   	int total = 0;
+	  	for(int i = 1; i*i <= sum; i++){
+	  		if((sum % i) == 0){
+	  			total = total + 2;
+	  		}
+	  	}
+	
+	  	if((sum >= 720720) && (total > 500)){
+	  		Console.WriteLine(n +"\t"+ sum +"\t"+ total);
+	  		inProgress = false;
+	  	}
+	}
+  
+}
