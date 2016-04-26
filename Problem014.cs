@@ -17,3 +17,35 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 */
 
 
+using System;
+class MainClass {
+  public static void Main (string[] args) {
+    int maxChain = 0;
+    int startingNum = 0;
+    
+    int limit = 1000000;
+    for(int i = 0; i < limit; i++){
+    	double n = (double)i;
+    	
+    	int chainLimit = 0;
+    	while(n > 1){
+    		if((n % 2) == 0 ){
+    			n = n * 0.5;
+    		}else{
+    			n = 3*n + 1;
+    		}
+    		chainLimit++;
+    	}
+    	
+    	if(chainLimit > maxChain){
+    		maxChain = chainLimit;
+    		startingNum = i;
+    		Console.WriteLine(i);
+    	}
+    }
+    
+    Console.WriteLine("Starting number and chain length:\t"+ startingNum +"\t"+ maxChain);
+    
+  }
+  
+}
