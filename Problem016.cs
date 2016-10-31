@@ -15,7 +15,7 @@ class MainClass {
 	public static void Main (string[] args) {
 				
 		//Repeat for each power (2^count)
-    //Always starts at 2^1
+		//Always starts at 2^1
 		int count = 1000;
 		string svar = "2";
 		for(int i = 1; i < count; i++){
@@ -45,22 +45,22 @@ class MainClass {
 		listIn.Reverse();
 		
 		//Sets up the lists to use
-    //Adds 0 to overflow to align lists
+		//Adds 0 to overflow to align lists
 		List<int> list2 = new List<int>();
 		List<int> list2Overflow = new List<int>();
 		list2Overflow.Add(0);
 
 		//Multiple each number in the list by 2
-    //then separate the results into ones and tens
+		//then separate the results into ones and tens
 		foreach(int i in listIn){
 			int t = i*2;
 			
-      //Find the number of digits in the result
+			//Find the number of digits in the result
 			double d = Math.Floor(Math.Log10(t) + 1);
 
-      //If the results is larger than a single number
-      //Store the output in one list
-		  //and the overflow in the other list
+			//If the results is larger than a single number
+			//Store the output in one list
+			//and the overflow in the other list
 			if(d > 1){
 				string ts = t.ToString();
 				int tones = Int32.Parse(ts.Substring(1, 1));
@@ -76,7 +76,7 @@ class MainClass {
 		//Used to even out the list counts of the 2 lists
 		list2.Add(0);
 		
-    //While loop exit condition
+		//While loop exit condition
 		bool condition = true;
     
 		//Add the lists together to get another list
@@ -87,22 +87,22 @@ class MainClass {
 				Console.WriteLine("error: list count mismatch");
 			}
 			
-      //sets up the lists to use and adds 0 to overflow to align lists
+			//sets up the lists to use and adds 0 to overflow to align lists
 			List<int> listt = new List<int>();
 			List<int> listtOverflow = new List<int>();
 			listtOverflow.Add(0);
 			
-      //Add each number from both lists together
-      //then separate the results into ones and tens
+			//Add each number from both lists together
+			//then separate the results into ones and tens
 			for(int i = 0; i < list2.Count; i++){
 				int t = list2[i] + list2Overflow[i];
 				
-        //Find the number of digits in the result
+				//Find the number of digits in the result
 				double d = Math.Floor(Math.Log10(t) + 1);
 				
-        //If the results is larger than a single number
-        //Store the output in one list
-		    //and the overflow in another list
+				//If the results is larger than a single number
+				//Store the output in one list
+				//and the overflow in another list
 				if(d > 1){
 					string ts = t.ToString();
 					int tones = Int32.Parse(ts.Substring(1, 1));
@@ -115,16 +115,16 @@ class MainClass {
 				}
 			}
 			
-      //Check overflow list to see if all overflows are included
-      //i.e. all numbers that overflowed are supposed to be added to the result
+			//Check overflow list to see if all overflows are included
+			//i.e. all numbers that overflowed are supposed to be added to the result
 			int total = 0;
 			foreach(int i in listtOverflow){
 				total += i;
 			}
 			
-      //Check to see if the overflow list still contains numbers,
-      //Repeat loop to merge overflow
-      //or prepare list into to be returned as a string
+			//Check to see if the overflow list still contains numbers,
+			//Repeat loop to merge overflow
+			//or prepare list into to be returned as a string
 			if(total > 0){
 				list2 = listt;
 				list2Overflow = listtOverflow;
@@ -132,7 +132,7 @@ class MainClass {
 				//Reverse the list back to normal order
 				listt.Reverse();
 				
-        //Convert list into a single string
+				//Convert list into a single string
 				StringBuilder builder = new StringBuilder();
 				foreach(int i in listt){
 					builder.Append(i);
@@ -142,7 +142,7 @@ class MainClass {
 				//Remove any leading zeros caused by aligning ones and tens
 				s = s.TrimStart(new Char[] { '0' } );
 				
-        //End loop
+				//End loop
 				condition = false;
 			}
 		}
